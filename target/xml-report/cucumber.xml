@@ -1,48 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="51.405" tests="3" skipped="0" failures="0" errors="0">
-<testcase classname="CheckTitles" name="TC_01 L'utilisateur doit pouvoir voir les elements de navbar(Hamburger bouton," time="10.49">
+<testsuite name="Cucumber" time="27.241" tests="3" skipped="0" failures="0" errors="0">
+<testcase classname="Check Titles et demander une démo(Cas nominal)" name="TC_001 Les elements de navbar(Pourquoi olea medical?, Solutions, Ressources, A propos d'Olea Medical," time="5.983">
 <system-out><![CDATA[
-Given L'utilisateur visite le site de Thermo Fisher Scientific..............passed
-Then Vérifier que les éléments de navbar sont visibles......................passed
+Given L'utilisateur visite le site de "https://www.olea-medical.com/fr/"....passed
+When L'utilisateur ferme Popup..............................................passed
+Then l'utilisateur vérifie que les champs concernés sont visibles...........passed
 ]]></system-out>
 </testcase>
-<testcase classname="CheckTitles" name="TC_02 L'utilisateur doit pouvoir cliquer sur  les elements de navbar" time="10.639">
+<testcase classname="Check Titles et demander une démo(Cas nominal)" name="TC_002 Les elements de navbar(Pourquoi olea medical?, Solutions, Ressources, A propos d'Olea Medical," time="21.247">
 <system-out><![CDATA[
-Given L'utilisateur visite le site de Thermo Fisher Scientific..............passed
-Then Vérifier que les éléments de navbar sont cliquable.....................passed
+Given L'utilisateur visite le site de "https://www.olea-medical.com/fr/"....passed
+When L'utilisateur ferme Popup..............................................passed
+Then l'utilisateur vérifie que les champs concernés sont fonctionnels.......passed
 ]]></system-out>
 </testcase>
-<testcase classname="CheckTitles" name="TC_03 L'utilisateur doit voir certains titres lorsqu'il clique sur le hamburger bouton," time="30.008">
-<system-out><![CDATA[
-Given L'utilisateur visite le site de Thermo Fisher Scientific..............passed
-When l'utilisateur clique sur le hamburger bouton...........................passed
-Then vérifier que les éléments de hamburger bouton sont visibles............passed
-Then Vérifier que la couleur du titre1 est noire............................passed
-When l'utilisateur scroll le titre 1........................................passed
-Then Vérifier que la couleur du titre1 est bleu.............................passed
-When l'utilisateur clique sur le titre1.....................................passed
-Then vérifier que ce titre1 "Anticorps" est visible.........................passed
-Then Vérifier que la couleur du titre2 est noire............................passed
-When l'utilisateur scroll le titre 2........................................passed
-Then Vérifier que la couleur du titre2 est bleu.............................passed
-When l'utilisateur clique sur le titre2.....................................passed
-Then vérifier que ce titre2 "Bioprocédés" est visible.......................passed
-Then Vérifier que la couleur du titre3 est noire............................passed
-When l'utilisateur scroll le titre 3........................................passed
-Then Vérifier que la couleur du titre3 est bleu.............................passed
-When l'utilisateur clique sur le titre3.....................................passed
-Then vérifier que ce titre3 "Services aux organisations de développement et de fabrication sous contrat (CDMO) et pour les essais cliniques" est visible.passed
-Then Vérifier que la couleur du titre4 est noire............................passed
-When l'utilisateur scroll le titre 4........................................passed
-Then Vérifier que la couleur du titre4 est bleu.............................passed
-When l'utilisateur clique sur le titre4.....................................passed
-Then vérifier que ce titre4 "S’inscrire et créer un compte" est visible.....passed
-Then Vérifier que la couleur du titre5 est noire............................passed
-When l'utilisateur scroll le titre 5........................................passed
-Then Vérifier que la couleur du titre5 est bleu.............................passed
-When l'utilisateur clique sur le titre5.....................................passed
-Then vérifier que ce titre5 "Reaction PCR en temps réel TaqMan" est visible.passed
-And l'utilisateur ferme la page.............................................passed
-]]></system-out>
+<testcase classname="Check Titles et demander une démo(Cas nominal)" name="TC_003 la demande de démo devrait pouvoir être créée(Cas nominal)" time="0">
 </testcase>
 </testsuite>

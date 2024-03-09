@@ -4,6 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 public class PageEssaie {
 
@@ -20,6 +21,7 @@ public class PageEssaie {
     public WebElement ingénierie;
 
     @FindBy(linkText = "Accéder à nos offres d'emploi")
+
     public WebElement acces;
 
     @FindBy(xpath = "//input[@id='keywords']")
@@ -30,10 +32,12 @@ public class PageEssaie {
 
     @FindBy(xpath = "(//a[text()='Postuler '])[1]")
     public WebElement postulerUnPost;
-
-    @FindBy(id= "jobapp_nom")
+    @FindBy(xpath = "//div[@aria-label='close-dialog']")
+    public WebElement popup;
+    @FindBy(xpath= "//input[@id='jobapp_Nom']")
     public WebElement nom;
-
+    @FindBy(id= "jobapp_Prénom")
+    public WebElement prenom;
     @FindBy(id= "applicant-resume")
     public WebElement joindreCv;
 
@@ -46,9 +50,10 @@ public class PageEssaie {
     @FindBy(id = "iti-0__item-us-preferred")
     public WebElement flagUs;
 
-    @FindBy(id = "jobapp_téléphone")
+    @FindBy(id = "jobapp_Téléphone")
     public WebElement tel;
     @FindBy(xpath = "//input[@id='jobapp-tc']")
     public WebElement checkbox;
-
+    @FindBy(xpath = "//button[text()='Soumettre']")
+    public WebElement soumettre;
 }

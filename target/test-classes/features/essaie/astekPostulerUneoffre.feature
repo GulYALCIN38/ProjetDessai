@@ -1,7 +1,7 @@
-@postulez
-Feature:postule_pour_un_emploi_chez_Astek
+@Astek
+Feature:Postule_pour_un_emploi_chez_Astek
 
-  Scenario:TC_01_recherche_un_post_sur_logiciel
+  Scenario:TC_01_recherche_un_post_sur_logiciel(CAS NOMINAL)
     Given utilisateur visite "site Astek"
     When utilisateur  clicque sur le bouton de POSTULER
     And utilisateur clicque sur le bouton de CDI

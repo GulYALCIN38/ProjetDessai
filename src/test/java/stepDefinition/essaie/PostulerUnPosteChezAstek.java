@@ -6,6 +6,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import pages.PageEssaie;
 import utilities.ConfigReader;
 import utilities.Driver;
@@ -17,7 +18,7 @@ import java.util.Set;
 
 import static org.junit.Assert.assertTrue;
 
-public class PostulerUnPoste {
+public class PostulerUnPosteChezAstek {
     PageEssaie pageAstek = new PageEssaie();
 
     @Given("utilisateur visite {string}")
@@ -28,6 +29,7 @@ public class PostulerUnPoste {
 
     @When("utilisateur  clicque sur le bouton de POSTULER")
     public void utilisateur_clicque_sur_le_bouton_de_postuler() {
+        ReusableMethods.visibleWait(pageAstek.postuler,25);
         pageAstek.postuler.click();
 
     }
@@ -53,7 +55,7 @@ public class PostulerUnPoste {
 
     @When("utilisateur clicque sur le bouton de Acceder a nos offres d'emploi")
     public void utilisateur_clicque_sur_le_bouton_de_acceder_a_nos_offres_d_emploi() {
-
+        ReusableMethods.wait(5);
         pageAstek.acces.click();
 
     }
@@ -73,15 +75,24 @@ public class PostulerUnPoste {
 
     @Then("utilisateur rempli ses informations pour soumettre")
     public void utilisateur_Rempli_Ses_Informations_Pour_Soumettre() {
-        pageAstek.refuser.click();
+        //pageAstek.refuser.click();
         ReusableMethods.wait(2);
-        pageAstek.nom.sendKeys("Yalcin", Keys.TAB, "Gul", Keys.TAB, "gulyalcin@gmail.com");
-        String path = System.getProperty("user.home") + "/Desktop/ResumeGul.pdf";
-       // pageAstek.joindreCv.click();
+        pageAstek.popup.click();
+
+        Actions actions = new Actions(Driver.getDriver());
+        ReusableMethods.visibleWait(pageAstek.nom,10);
+        actions.moveToElement(pageAstek.nom);
+        actions.sendKeys(pageAstek.nom,"Yalcin").build().perform();
+        ReusableMethods.wait(1);
+        pageAstek.prenom.sendKeys("Gul",Keys.TAB, "gulyalcin@gmail.com");
+        ReusableMethods.wait(1);
+        String path = System.getProperty("user.home") + "/Desktop/Hacer-Gul-Yalcin-FlowCV-Resume-20240209 (2).pdf";
+        // pageAstek.joindreCv.click();
         ReusableMethods.wait(1);
         pageAstek.joindreCv.sendKeys(path);
 
-        ReusableMethods.wait(2);
+
+        ReusableMethods.wait(1);
 
         //pageAstek.dropdownFlag.click();
 
@@ -92,10 +103,7 @@ public class PostulerUnPoste {
         pageAstek.checkbox.click();
         assertTrue(pageAstek.checkbox.isSelected());
 
-
-
-
-
+        //pageAstek.soumettre.click();
 
 
     }

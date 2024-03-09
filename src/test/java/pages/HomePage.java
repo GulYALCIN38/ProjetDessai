@@ -59,4 +59,9 @@ public class HomePage {
     @FindBy(id = "secondary-link-5-1")
     public WebElement secondarylink5_1;
 
+    @FindBy(xpath = "//span[@data-test-id='loginScreen_features']")
+    public WebElement feature;
+    @FindBy(xpath = "//div[text()='Payment Service']")
+    public WebElement paimentservices;
+
 }
