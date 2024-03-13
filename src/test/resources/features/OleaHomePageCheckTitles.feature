@@ -1,5 +1,6 @@
 @olea
-Feature:Check Titles et demander une démo(Cas nominal)
+Feature:Check Titles et demander une démo(test robustes)
+
   Background: Visite le site
     Given L'utilisateur visite le site de "https://www.olea-medical.com/fr/"
     When  L'utilisateur ferme Popup
@@ -14,9 +15,13 @@ Feature:Check Titles et demander une démo(Cas nominal)
 
     Then l'utilisateur vérifie que les champs concernés sont fonctionnels
 
-    Scenario: TC_003 la demande de démo devrait pouvoir être créée(Cas nominal)
+  Scenario Outline: TC_003 la demande de démo ne peut être créées sans remplir les champs obligatoires.
 
-
-
-
-
+    And l'utilisateur clique sur la demande de démo
+    And l'utilisateur remplit le formulaire avec des valeurs valides "<prénom>", "<nom>", "<Instution>"
+    Then l'utilisateur vérifie que le message d'avertissement apparaît:"Veuillez remplir tous les champs requis."
+    Examples:
+      | prénom | nom     | Instution                       |
+      |        | Grifart | Fondation Combattre la Leucémie |
+      | Gul    |         | protection environnementale     |
+      | Gul    | Yalcin  |                                 |

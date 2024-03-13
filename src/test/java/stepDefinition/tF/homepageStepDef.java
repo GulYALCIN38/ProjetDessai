@@ -1,4 +1,4 @@
-package stepDefinition.thermoFisher;
+package stepDefinition.tF;
 
 import enums.COLOR;
 import io.cucumber.java.en.*;

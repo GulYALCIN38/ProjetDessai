@@ -56,4 +56,5 @@ public class PageEssaie {
     public WebElement checkbox;
     @FindBy(xpath = "//button[text()='Soumettre']")
     public WebElement soumettre;
+
 }

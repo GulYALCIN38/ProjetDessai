@@ -1,5 +1,4 @@
 package enums;
-
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 
@@ -10,8 +9,6 @@ public enum COLOR {
     ORANGE_BORDER("#ff6b00","rgb(255, 107, 0)","rgba(255, 107, 0, 1)"),
     NOIR_BACKROUND("#24272a","rgb(0, 0, 0)","rgba(0, 0, 0, 0)"),
     ORANGE_BACKROUND("#ff6b00","rgb(255, 107, 0)","rgba(255, 107, 0, 1)"),
-    //rgb(255, 107, 0) ,#ff6b00 ,border-bottom-color
-    //background-color ,#24272a  rgb(36, 39, 42)   siyah backround  rgba([36, 39, 42, 1])
 
     ;
 
@@ -36,15 +33,33 @@ public enum COLOR {
     public String getRGBA() {
         return RGBA;
     }
+
+    /**
+     * Cette méthode valide la TextColor pour un WebElement
+     * @param w WebElement
+     * @author gulyalcin
+     * @since 09/03/2024
+     */
     public void assertTextColor(WebElement w){
         String actuelTextColor=w.getCssValue("color");
         Assert.assertEquals(this.getRGBA(),actuelTextColor);
     }
+    /**
+     * Cette méthode valide la BorderColor pour un WebElement
+     * @param w WebElement
+     * @author gulyalcin
+     * @since 09/03/2024
+     */
     public void assertBorderColor(WebElement w){
         String actuelBorderColor=w.getCssValue("border-bottom-color");
         Assert.assertEquals(this.getRGBA(),actuelBorderColor);
-
     }
+    /**
+     * Cette méthode valide la BackroundColor pour un WebElement
+     * @param w WebElement
+     * @author gulyalcin
+     * @since 09/03/2024
+     */
     public void assertBackroundColor(WebElement w){
         String actuelBackroundColor=w.getCssValue("background-color");
         Assert.assertEquals(this.getRGBA(),actuelBackroundColor);
