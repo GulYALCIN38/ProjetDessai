@@ -7,10 +7,12 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Test;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import pages.CommonPage;
+import utilities.ConfigReader;
 import utilities.ReusableMethods;
 
 import java.util.List;
@@ -26,7 +28,7 @@ public class OleaHomepageCheckTitles extends CommonPage {
 
     @Given("L'utilisateur visite le site de {string}")
     public void lUtilisateurVisiteLeSiteDe(String url) {
-        driver.get(url);
+        driver.get(ConfigReader.getProperty("urlOlea"));
     }
 
     @When("L'utilisateur ferme Popup")
@@ -57,7 +59,9 @@ public class OleaHomepageCheckTitles extends CommonPage {
             ReusableMethods.wait(1);
             actions.moveToElement(w).perform();
             COLOR.ORANGE_BORDER.assertBorderColor(w);
+            ReusableMethods.wait(1);
             w.click();
+            ReusableMethods.wait(1);
             COLOR.NOIR_BACKROUND.assertBackroundColor(w);
             ReusableMethods.wait(1);
         }
@@ -91,7 +95,6 @@ public class OleaHomepageCheckTitles extends CommonPage {
         ReusableMethods.wait(1);
         getOleaHomePage().date.click();
         String creneau=faker.lorem().word();
-        ReusableMethods.wait(1);
         getOleaHomePage().creneau.click();
         getOleaHomePage().creneau.sendKeys(creneau,Keys.TAB,Keys.ENTER);
         ReusableMethods.wait(1);
@@ -104,7 +107,15 @@ public class OleaHomepageCheckTitles extends CommonPage {
         String actuelmessage=getOleaHomePage().message.getText();
         assertEquals(expectedMessage,actuelmessage);
         driver.switchTo().defaultContent();
+
+        String str= "gul";
+        String str2="gul";
+        assert str.equals(str2);
+        
     }
+
+
+
 }
 
 

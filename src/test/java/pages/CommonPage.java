@@ -8,7 +8,7 @@ public abstract class CommonPage {
     public CommonPage() {
         PageFactory.initElements(driver,this);
     }
-    public OleaHomePage oleaHomePage;
+    private OleaHomePage oleaHomePage;
 
     public OleaHomePage getOleaHomePage() {
         if(oleaHomePage==null){
@@ -16,4 +16,5 @@ public abstract class CommonPage {
         }
         return oleaHomePage;
     }
+
 }

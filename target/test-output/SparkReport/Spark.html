@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Smoke Test Report</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">mars 12, 2024 09:24:24 AM</span></a>
+<a href="#"><span class="badge badge-primary">mars 21, 2024 02:42:05 PM</span></a>
 </li>
 </ul>
 </div>
@@ -57,6 +57,11 @@
 <span class="ico"><i class="fa fa-tag"></i></span>
 </a>
 </li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
+</a>
+</li>
 </ul>
 </div>
 </div>      <div class="vcontainer">
@@ -66,25 +71,25 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>mars 12, 2024 09:24:24 AM</h3>
+<h3>mars 21, 2024 02:42:05 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>mars 12, 2024 09:25:04 AM</h3>
+<h3>mars 21, 2024 02:43:30 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Features Passed</p>
-<h3>1</h3>
+<h3>0</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Features Failed</p>
-<h3>0</h3>
+<h3>1</h3>
 </div></div>
 </div>
 </div>
@@ -100,12 +105,12 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'>
-<b>1</b> features passed
+<div><small data-tooltip='0%'>
+<b>0</b> features passed
 </small>
 </div>
 <div>
-<small data-tooltip='0%'><b>0</b> features failed,
+<small data-tooltip='100%'><b>1</b> features failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -123,9 +128,9 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>3</b> scenarios passed</small></div>
+<div><small data-tooltip='80%'><b>4</b> scenarios passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> scenarios failed,
+<small data-tooltip='20%'><b>1</b> scenarios failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -143,9 +148,9 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>6</b> steps passed</small></div>
+<div><small data-tooltip='95%'><b>21</b> steps passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> steps failed,
+<small data-tooltip='4%'><b>1</b> steps failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -162,7 +167,7 @@
 </div></div>
 <script>
 var timeline = {
-"Check Titles et demander une démo(Cas nominal)":38.924
+"Check Titles et demander une démo(test robustesse)":83.393
 };
 </script>
 <div class="row">
@@ -173,11 +178,11 @@ var timeline = {
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
 <td>@olea</td>
-<td>3</td>
+<td>4</td>
+<td>1</td>
 <td>0</td>
 <td>0</td>
-<td>0</td>
-<td>100%</td>
+<td>80%</td>
 </tr>
 </tbody>
 </table></div>
@@ -202,19 +207,19 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 1,
-failParent: 0,
+passParent: 0,
+failParent: 1,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
-passChild: 3,
-failChild: 0,
+passChild: 4,
+failChild: 1,
 warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 6,
-failGrandChild: 0,
+passGrandChild: 21,
+failGrandChild: 1,
 warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
@@ -230,7 +235,7 @@ eventsCount: 5,
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -244,25 +249,25 @@ eventsCount: 5,
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="pass" test-id="1"
+        <li class="test-item"  status="fail" test-id="1"
           author=""
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">Check Titles et demander une démo(Cas nominal)</p>
+            <p class="name">Check Titles et demander une démo(test robustesse)</p>
             <p class="text-sm">
-              <span>09:24:25</span> / <span>00:00:38:924</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>14:42:07</span> / <span>00:01:23:393</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">Check Titles et demander une démo(Cas nominal)</h5>
-<span class='badge badge-success'>03.12.2024 09:24:25</span>
-<span class='badge badge-danger'>03.12.2024 09:25:04</span>
-<span class='badge badge-default'>00:00:38:924</span>
+<h5 class="test-status text-fail">Check Titles et demander une démo(test robustesse)</h5>
+<span class='badge badge-success'>03.21.2024 14:42:07</span>
+<span class='badge badge-danger'>03.21.2024 14:43:30</span>
+<span class='badge badge-default'>00:01:23:393</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -300,10 +305,13 @@ eventsCount: 5,
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="8"><span class="badge log pass-bg mr-2">Pass</span>TC_002 Les elements de navbar(Pourquoi olea medical?, Solutions, Ressources, A propos d'Olea Medical,</div>
+        <div class="node" id="8"><span class="badge log fail-bg mr-2">Fail</span>TC_002 Les elements de navbar(Pourquoi olea medical?, Solutions, Ressources, A propos d'Olea Medical,</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
       </div>
     </div>
-        <div class="collapse">
+        <div class="">
           <div class="card-body">
               <div class="step pass-bg" title="stepDefinition.OleaHomepageCheckTitles.lUtilisateurVisiteLeSiteDe(java.lang.String)">
                 <span>Given L'utilisateur visite le site de "https://www.olea-medical.com/fr/"</span>
@@ -315,8 +323,27 @@ eventsCount: 5,
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepDefinition.OleaHomepageCheckTitles.lUtilisateurVérifieQueLesChampsConcernésSontFonctionnels()">
+              <div class="step fail-bg" title="stepDefinition.OleaHomepageCheckTitles.lUtilisateurVérifieQueLesChampsConcernésSontFonctionnels()">
                 <span>Then l'utilisateur vérifie que les champs concernés sont fonctionnels</span>
+      <div>
+        <textarea disabled class="code-block">org.junit.ComparisonFailure: expected:<rgba([255, 107, 0], 1)> but was:<rgba([36, 39, 42], 1)>
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at enums.COLOR.assertBackroundColor(COLOR.java:65)
+	at stepDefinition.OleaHomepageCheckTitles.lUtilisateurVérifieQueLesChampsConcernésSontFonctionnels(OleaHomepageCheckTitles.java:69)
+	at ✽.l'utilisateur vérifie que les champs concernés sont fonctionnels(file:///C:/Users/ASUS/IdeaProjects/ProjetDessai/src/test/resources/features/OleaHomePageCheckTitles.feature:16)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER">
+                <span>stepDefinition.Hooks.tearDown(io.cucumber.java.Scenario)</span>
+      <div>scenario_TC_002 Les elements de navbar(Pourquoi olea medical?, Solutions, Ressources, A propos d'Olea Medical,
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../embedded1.jpeg' src="../embedded1.jpeg">
+    
+    </div></div>
+</div>
       <div>
       </div>
               </div>
@@ -326,9 +353,113 @@ eventsCount: 5,
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="14"><span class="badge log pass-bg mr-2">Pass</span>TC_003 la demande de démo devrait pouvoir être créée(Cas nominal)</div>
+        <div class="node" id="14"><span class="badge log pass-bg mr-2">Pass</span>TC_003 la demande de démo ne peut être créées sans remplir les champs obligatoires.</div>
       </div>
     </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="15"><span class="badge log pass-bg mr-2">Pass</span>TC_003 la demande de démo ne peut être créées sans remplir les champs obligatoires.</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given L'utilisateur visite le site de "https://www.olea-medical.com/fr/"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When L'utilisateur ferme Popup</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And l'utilisateur clique sur la demande de démo</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And l'utilisateur remplit le formulaire avec des valeurs valides "", "Grifart", "Fondation Combattre la Leucémie"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then l'utilisateur vérifie que le message d'avertissement apparaît:"Veuillez remplir tous les champs requis."</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="23"><span class="badge log pass-bg mr-2">Pass</span>TC_003 la demande de démo ne peut être créées sans remplir les champs obligatoires.</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given L'utilisateur visite le site de "https://www.olea-medical.com/fr/"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When L'utilisateur ferme Popup</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And l'utilisateur clique sur la demande de démo</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And l'utilisateur remplit le formulaire avec des valeurs valides "Gul", "", "protection environnementale"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then l'utilisateur vérifie que le message d'avertissement apparaît:"Veuillez remplir tous les champs requis."</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="31"><span class="badge log pass-bg mr-2">Pass</span>TC_003 la demande de démo ne peut être créées sans remplir les champs obligatoires.</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given L'utilisateur visite le site de "https://www.olea-medical.com/fr/"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When L'utilisateur ferme Popup</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And l'utilisateur clique sur la demande de démo</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And l'utilisateur remplit le formulaire avec des valeurs valides "Gul", "Yalcin", ""</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then l'utilisateur vérifie que le message d'avertissement apparaît:"Veuillez remplir tous les champs requis."</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
   </div>
 </div>
           </div>
@@ -353,15 +484,17 @@ eventsCount: 5,
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log pass-bg'>3</span>
+<span class='badge log pass-bg'>4</span>
+<span class='badge log badge-danger'>1</span>
 </span>
 <p class="name">@olea</p>
-<p class="duration text-sm">3 tests</p>
+<p class="duration text-sm">5 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
 <h4>@olea</h4>
-<span status="pass" class='badge log pass-bg'>3 passed</span>
+<span status="pass" class='badge log pass-bg'>4 passed</span>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -374,31 +507,103 @@ eventsCount: 5,
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>09:24:25 AM</td>
+<td>14:42:07 PM</td>
 <td>
 <a href="#" class="linked" test-id='1' id='2'>TC_001 Les elements de navbar(Pourquoi olea medical?, Solutions, Ressources, A propos d'Olea Medical,</a>
 <div class="">
-<span class="badge badge-default">Check Titles et demander une démo(Cas nominal).TC_001 Les elements de navbar(Pourquoi olea medical?, Solutions, Ressources, A propos d'Olea Medical,</span>
+<span class="badge badge-default">Check Titles et demander une démo(test robustesse).TC_001 Les elements de navbar(Pourquoi olea medical?, Solutions, Ressources, A propos d'Olea Medical,</span>
 </div>
 </td>
 </tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>09:24:36 AM</td>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:42:18 PM</td>
 <td>
 <a href="#" class="linked" test-id='1' id='8'>TC_002 Les elements de navbar(Pourquoi olea medical?, Solutions, Ressources, A propos d'Olea Medical,</a>
 <div class="">
-<span class="badge badge-default">Check Titles et demander une démo(Cas nominal).TC_002 Les elements de navbar(Pourquoi olea medical?, Solutions, Ressources, A propos d'Olea Medical,</span>
+<span class="badge badge-default">Check Titles et demander une démo(test robustesse).TC_002 Les elements de navbar(Pourquoi olea medical?, Solutions, Ressources, A propos d'Olea Medical,</span>
 </div>
 </td>
 </tr>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>09:25:04 AM</td>
+<td>14:42:44 PM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='14'>TC_003 la demande de démo devrait pouvoir être créée(Cas nominal)</a>
+<a href="#" class="linked" test-id='1' id='15'>TC_003 la demande de démo ne peut être créées sans remplir les champs obligatoires.</a>
 <div class="">
-<span class="badge badge-default">Check Titles et demander une démo(Cas nominal).TC_003 la demande de démo devrait pouvoir être créée(Cas nominal)</span>
+<span class="badge badge-default">Check Titles et demander une démo(test robustesse).TC_003 la demande de démo ne peut être créées sans remplir les champs obligatoires.</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:43:00 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='23'>TC_003 la demande de démo ne peut être créées sans remplir les champs obligatoires.</a>
+<div class="">
+<span class="badge badge-default">Check Titles et demander une démo(test robustesse).TC_003 la demande de démo ne peut être créées sans remplir les champs obligatoires.</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>14:43:15 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='31'>TC_003 la demande de démo ne peut être créées sans remplir les champs obligatoires.</a>
+<div class="">
+<span class="badge badge-default">Check Titles et demander une démo(test robustesse).TC_003 la demande de démo ne peut être créées sans remplir les champs obligatoires.</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">org.junit.ComparisonFailure</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.junit.ComparisonFailure</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>14:42:25 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='12'>Then l'utilisateur vérifie que les champs concernés sont fonctionnels</a>
+<div class="">
+<span class="badge badge-default">Check Titles et demander une démo(test robustesse).TC_002 Les elements de navbar(Pourquoi olea medical?, Solutions, Ressources, A propos d'Olea Medical,.Then l'utilisateur vérifie que les champs concernés sont fonctionnels</span>
 </div>
 </td>
 </tr>
