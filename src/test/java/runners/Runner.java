@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
 },
         features = "src/test/resources/features",
         glue = {"stepDefinition"},
-        tags ="@olea",
+        tags ="@fdj",
         dryRun = false,
         monochrome = true
 

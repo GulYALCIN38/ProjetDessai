@@ -1,5 +1,5 @@
 @olea
-Feature:Check Titles et demander une démo(test robustesse)
+Feature:Check Titles et Créer un compte(test robustesse pour le champ de mot de passe)
 
   Background: Visite le site
     Given L'utilisateur visite le site de "https://www.olea-medical.com/fr/"
@@ -14,6 +14,7 @@ Feature:Check Titles et demander une démo(test robustesse)
   demander une démo, icon de connexion, FR) doivent être fonctionnels
 
     Then l'utilisateur vérifie que les champs concernés sont fonctionnels
+
 
   Scenario Outline: TC_003 la demande de démo ne peut être créées sans remplir les champs obligatoires.
 

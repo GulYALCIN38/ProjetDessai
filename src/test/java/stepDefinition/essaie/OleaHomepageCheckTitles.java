@@ -1,5 +1,5 @@
 
-package stepDefinition;
+package stepDefinition.essaie;
 
 import com.github.javafaker.Faker;
 import enums.COLOR;

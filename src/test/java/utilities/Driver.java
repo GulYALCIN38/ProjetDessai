@@ -133,7 +133,7 @@ public class Driver {
                     Dimension dimension = new Dimension(width, height);
                     driverPool.get().manage().window().setSize(dimension);
                 }
-                driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+                driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
             }
         }
         /*

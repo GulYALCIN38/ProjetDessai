@@ -4,11 +4,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 import java.util.List;
 
 import static java.lang.String.format;
+import static org.junit.Assert.assertEquals;
+import static stepDefinition.Hooks.driver;
 
 public class HomePage {
     public HomePage() {
@@ -63,5 +67,57 @@ public class HomePage {
     public WebElement feature;
     @FindBy(xpath = "//div[text()='Payment Service']")
     public WebElement paimentservices;
+    @FindBy(xpath = "//div[@class='group h-full']")
+    public List<WebElement> boutonNawbar;
+    @FindBy(xpath = "//button[@id='popin_tc_privacy_button_2']")
+    public WebElement popup;
+    @FindBy(xpath = "//a[@title='Accueil']")
+    public WebElement title;
 
+    @FindBy(xpath = "//a[@id='top-menu-create-account-button']")
+    public WebElement creeUnCompte;
+    @FindBy(xpath = "//input[@name='email']")
+    public WebElement email;
+    @FindBy(xpath = "//input[@id='wup-password-input']")
+    public WebElement password;
+    @FindBy(xpath = "//input[@id='wup-mobilePhone-input']")
+    public WebElement mobilePhone;
+    @FindBy(xpath = "//div[@id='wup-password-error-message']")
+    public WebElement errorMessage;
+    @FindBy(xpath = "//img[@id='wup-password-opened-eye-icon']")
+    public WebElement openPassword ;
+    @FindBy(id = "wup-continue")
+    public WebElement continuer ;
+    @FindBy(id = "wup-step2-identity-title")
+    public WebElement identityTitle ;
+    /**
+     * Cette méthode valide le title qui change lorsque vous cliquez sur un élément.
+     * @param w webElement
+     * @param expectedTitle
+     * @author gulyalcin
+     * @date 08.06.2024
+     */
+    public void assertTitle(WebElement w,String expectedTitle){
+        w.click();
+        String actuelTitle= driver.getTitle();
+        assertEquals(expectedTitle,actuelTitle);
+    }
+
+    /**
+     * Cette méthode valide l'url qui change lorsque vous cliquez sur un élément.
+     * @param w webElement
+     * @param expectedUrl
+     * @author gulyalcin
+     * @date 07.06.2024
+     */
+    public void assertUrl(WebElement w,String expectedUrl){
+        ReusableMethods.visibleWait(w,10);
+        w.click();
+        String actuelUrl=driver.getCurrentUrl();
+        assertEquals(expectedUrl,actuelUrl);
+    }
+    public void choisissezDropdown(WebElement w,String choix ){
+        Select select=new Select(w);
+        select.selectByVisibleText(choix);
+    }
 }
