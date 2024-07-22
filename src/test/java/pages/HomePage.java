@@ -90,6 +90,28 @@ public class HomePage {
     public WebElement continuer ;
     @FindBy(id = "wup-step2-identity-title")
     public WebElement identityTitle ;
+
+    //-------------DIAGDEV-----------------------------------------------------------------
+    @FindBy(id = "enslashcontactslash")
+    public WebElement contact ;
+    @FindBy(name = "firstname")
+    public WebElement firstName ;
+    @FindBy(name = "lastname")
+    public WebElement lastName ;
+    @FindBy(name = "position")
+    public WebElement position ;
+    @FindBy(name = "company")
+    public WebElement company ;
+    @FindBy(name = "question")
+    public WebElement request ;
+    @FindBy(name = "city_state")
+    public WebElement cityState ;
+    @FindBy(name = "email")
+    public WebElement mail ;
+    @FindBy(xpath = "//input[@type='submit']")
+    public WebElement send;
+    @FindBy(xpath = "//div[@class='errorMessage']")
+    public WebElement message;
     /**
      * Cette méthode valide le title qui change lorsque vous cliquez sur un élément.
      * @param w webElement

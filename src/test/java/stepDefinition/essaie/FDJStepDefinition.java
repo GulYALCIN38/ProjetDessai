@@ -1,4 +1,4 @@
-package stepDefinition;
+package stepDefinition.essaie;
 
 import io.cucumber.java.en.*;
 import org.junit.Assert;
@@ -11,7 +11,7 @@ import java.util.List;
 import static stepDefinition.Hooks.actions;
 import static stepDefinition.Hooks.driver;
 
-public class JDFStepDefinition {
+public class FDJStepDefinition {
     List<WebElement> elements;
     HomePage homePage = new HomePage();
 
@@ -37,7 +37,7 @@ public class JDFStepDefinition {
         elements = homePage.boutonNawbar;
         for (WebElement w : elements) {
             actions.moveToElement(w).perform();
-            Assert.assertTrue(w.isDisplayed());
+            Assert.assertFalse(w.isDisplayed());
             assert w.isEnabled();
             ReusableMethods.wait(1);
         }
@@ -94,6 +94,8 @@ public class JDFStepDefinition {
         assert homePage.identityTitle.isDisplayed();
 
     }
+
+
 }
 
 
