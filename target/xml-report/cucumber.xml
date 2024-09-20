@@ -1,80 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="132.729" tests="7" skipped="0" failures="1" errors="0">
-<testcase classname="Check Titles et Créer un compte(test robustesse et cas nominal pour le champ de mot de passe)" name="TC_001 Les elements de navbar(Tous les jeux, EuroDreams, Euromillions, Loto, illiko" time="13.724">
-<failure type="java.lang.AssertionError">
-<![CDATA[java.lang.AssertionError
-	at org.junit.Assert.fail(Assert.java:87)
-	at org.junit.Assert.assertTrue(Assert.java:42)
-	at org.junit.Assert.assertFalse(Assert.java:65)
-	at org.junit.Assert.assertFalse(Assert.java:75)
-	at stepDefinition.FDJStepDefinition.l_utilisateur_vérifie_que_les_champs_concernés_sont_visibles_et_fonctionnels(FDJStepDefinition.java:40)
-	at ✽.L'utilisateur vérifie que les champs concernés sont visibles et fonctionnels(file:///C:/Users/ASUS/IdeaProjects/ProjetDessai/src/test/resources/features/FDJ.feature:17)
-]]>
-</failure>
+<testsuite name="Cucumber" time="98.221" tests="7" skipped="0" failures="0" errors="0">
+<testcase classname="Check Titles et Créer un contact(test robustesse pour le lien de contact)" name="TC_001 TEST ROBUSTESSE(negatif) Un contact ne peut pas être créé en laissant les champs obligatoires vides. - Example #1.1" time="17.96">
 <system-out><![CDATA[
-Given l'utilisateur visite le site de "https://www.fdj.fr/".................passed
-When l'utilisateur ferme Popup..............................................passed
-Then L'utilisateur vérifie que les champs concernés sont visibles et fonctionnels.failed
+Given l'utilisateur visite le site de "http://diagdev.com"..................passed
+When l'utilisateur clique sur le lien de Contact............................passed
+And l'utilisateur remplit le formulaire "","YALCIN","Test qa","Talenttech","Lorem ipsum dolor sit amet","Montpellier","gulfen3@gmail.com".passed
+And l'utilisateur  clique sur le Send button................................passed
+Then utilisateur vérifie que le message d'avertissement "Forms contains errors. Please check your informations." apparaît sur la surface rouge.passed
 ]]></system-out>
 </testcase>
-<testcase classname="Check Titles et Créer un compte(test robustesse et cas nominal pour le champ de mot de passe)" name="TC_002 TEST ROBUSTESSE(negatif) Un compte ne peut pas être créé en saisissant un mot de passe invalide - Example #1.1" time="18.839">
+<testcase classname="Check Titles et Créer un contact(test robustesse pour le lien de contact)" name="TC_001 TEST ROBUSTESSE(negatif) Un contact ne peut pas être créé en laissant les champs obligatoires vides. - Example #1.2" time="13.889">
 <system-out><![CDATA[
-Given l'utilisateur visite le site de "https://www.fdj.fr/".................passed
-When l'utilisateur ferme Popup..............................................passed
-And l'utilisateur clique sur le link de Créer un compte.....................passed
-And l'utilisateur remplit le formulaire avec des valeurs valides "gulyalcin2022@gmail.com", "0658194363".passed
-And l'utilisateur remplit le champ de mot de passe avec de valeur invalid "Francais38".passed
-Then utilisateur vérifie que le message d'avertissement "Merci de respecter les critères ci-dessus" apparaît.passed
+Given l'utilisateur visite le site de "http://diagdev.com"..................passed
+When l'utilisateur clique sur le lien de Contact............................passed
+And l'utilisateur remplit le formulaire "Gul","","Dev Backend","Laboris","Consectetur adipisicing elit","Montpellier","gul@gmail.com".passed
+And l'utilisateur  clique sur le Send button................................passed
+Then utilisateur vérifie que le message d'avertissement "Forms contains errors. Please check your informations." apparaît sur la surface rouge.passed
 ]]></system-out>
 </testcase>
-<testcase classname="Check Titles et Créer un compte(test robustesse et cas nominal pour le champ de mot de passe)" name="TC_002 TEST ROBUSTESSE(negatif) Un compte ne peut pas être créé en saisissant un mot de passe invalide - Example #1.2" time="21.089">
+<testcase classname="Check Titles et Créer un contact(test robustesse pour le lien de contact)" name="TC_001 TEST ROBUSTESSE(negatif) Un contact ne peut pas être créé en laissant les champs obligatoires vides. - Example #1.3" time="13.758">
 <system-out><![CDATA[
-Given l'utilisateur visite le site de "https://www.fdj.fr/".................passed
-When l'utilisateur ferme Popup..............................................passed
-And l'utilisateur clique sur le link de Créer un compte.....................passed
-And l'utilisateur remplit le formulaire avec des valeurs valides "yalcin2022@gmail.com", "0658194363".passed
-And l'utilisateur remplit le champ de mot de passe avec de valeur invalid "Fdj38**".passed
-Then utilisateur vérifie que le message d'avertissement "Merci de respecter les critères ci-dessus" apparaît.passed
+Given l'utilisateur visite le site de "http://diagdev.com"..................passed
+When l'utilisateur clique sur le lien de Contact............................passed
+And l'utilisateur remplit le formulaire "Gul","YALCIN","","Excepteur","Sed do eiusmod tempor","Montpellier","yalcin@gmail.com".passed
+And l'utilisateur  clique sur le Send button................................passed
+Then utilisateur vérifie que le message d'avertissement "Forms contains errors. Please check your informations." apparaît sur la surface rouge.passed
 ]]></system-out>
 </testcase>
-<testcase classname="Check Titles et Créer un compte(test robustesse et cas nominal pour le champ de mot de passe)" name="TC_002 TEST ROBUSTESSE(negatif) Un compte ne peut pas être créé en saisissant un mot de passe invalide - Example #1.3" time="21.983">
+<testcase classname="Check Titles et Créer un contact(test robustesse pour le lien de contact)" name="TC_001 TEST ROBUSTESSE(negatif) Un contact ne peut pas être créé en laissant les champs obligatoires vides. - Example #1.4" time="13.039">
 <system-out><![CDATA[
-Given l'utilisateur visite le site de "https://www.fdj.fr/".................passed
-When l'utilisateur ferme Popup..............................................passed
-And l'utilisateur clique sur le link de Créer un compte.....................passed
-And l'utilisateur remplit le formulaire avec des valeurs valides "gul2022@gmail.com", "0658194363".passed
-And l'utilisateur remplit le champ de mot de passe avec de valeur invalid "Francais*".passed
-Then utilisateur vérifie que le message d'avertissement "Merci de respecter les critères ci-dessus" apparaît.passed
+Given l'utilisateur visite le site de "http://diagdev.com"..................passed
+When l'utilisateur clique sur le lien de Contact............................passed
+And l'utilisateur remplit le formulaire "Gul","YALCIN","SCRUM MASTER","","Quis nostrud exercitation ul","Montpellier","kaya@gmail.com".passed
+And l'utilisateur  clique sur le Send button................................passed
+Then utilisateur vérifie que le message d'avertissement "Forms contains errors. Please check your informations." apparaît sur la surface rouge.passed
 ]]></system-out>
 </testcase>
-<testcase classname="Check Titles et Créer un compte(test robustesse et cas nominal pour le champ de mot de passe)" name="TC_002 TEST ROBUSTESSE(negatif) Un compte ne peut pas être créé en saisissant un mot de passe invalide - Example #1.4" time="18.811">
+<testcase classname="Check Titles et Créer un contact(test robustesse pour le lien de contact)" name="TC_001 TEST ROBUSTESSE(negatif) Un contact ne peut pas être créé en laissant les champs obligatoires vides. - Example #1.5" time="14.014">
 <system-out><![CDATA[
-Given l'utilisateur visite le site de "https://www.fdj.fr/".................passed
-When l'utilisateur ferme Popup..............................................passed
-And l'utilisateur clique sur le link de Créer un compte.....................passed
-And l'utilisateur remplit le formulaire avec des valeurs valides "gulyalcin2022@gmail.com", "0658194363".passed
-And l'utilisateur remplit le champ de mot de passe avec de valeur invalid "francais38*".passed
-Then utilisateur vérifie que le message d'avertissement "Merci de respecter les critères ci-dessus" apparaît.passed
+Given l'utilisateur visite le site de "http://diagdev.com"..................passed
+When l'utilisateur clique sur le lien de Contact............................passed
+And l'utilisateur remplit le formulaire "Gul","YALCIN","PO","Officia","","Montpellier","zelu@gmail.com".passed
+And l'utilisateur  clique sur le Send button................................passed
+Then utilisateur vérifie que le message d'avertissement "Forms contains errors. Please check your informations." apparaît sur la surface rouge.passed
 ]]></system-out>
 </testcase>
-<testcase classname="Check Titles et Créer un compte(test robustesse et cas nominal pour le champ de mot de passe)" name="TC_002 TEST ROBUSTESSE(negatif) Un compte ne peut pas être créé en saisissant un mot de passe invalide - Example #1.5" time="18.274">
+<testcase classname="Check Titles et Créer un contact(test robustesse pour le lien de contact)" name="TC_001 TEST ROBUSTESSE(negatif) Un contact ne peut pas être créé en laissant les champs obligatoires vides. - Example #1.6" time="12.749">
 <system-out><![CDATA[
-Given l'utilisateur visite le site de "https://www.fdj.fr/".................passed
-When l'utilisateur ferme Popup..............................................passed
-And l'utilisateur clique sur le link de Créer un compte.....................passed
-And l'utilisateur remplit le formulaire avec des valeurs valides "gulyalcin@gmail.com", "0658194363".passed
-And l'utilisateur remplit le champ de mot de passe avec de valeur invalid "FRANCAIS38*".passed
-Then utilisateur vérifie que le message d'avertissement "Merci de respecter les critères ci-dessus" apparaît.passed
+Given l'utilisateur visite le site de "http://diagdev.com"..................passed
+When l'utilisateur clique sur le lien de Contact............................passed
+And l'utilisateur remplit le formulaire "Gul","YALCIN","Architect","Voluptate","Duis aute irure dolor in","","umut@gmail.com".passed
+And l'utilisateur  clique sur le Send button................................passed
+Then utilisateur vérifie que le message d'avertissement "Forms contains errors. Please check your informations." apparaît sur la surface rouge.passed
 ]]></system-out>
 </testcase>
-<testcase classname="Check Titles et Créer un compte(test robustesse et cas nominal pour le champ de mot de passe)" name="TC_003 &quot;Happy scenario&quot; (CAS NOMINAL) avec au format de mot de passe valid ( - Example #1.1" time="19.521">
+<testcase classname="Check Titles et Créer un contact(test robustesse pour le lien de contact)" name="TC_001 TEST ROBUSTESSE(negatif) Un contact ne peut pas être créé en laissant les champs obligatoires vides. - Example #1.7" time="12.525">
 <system-out><![CDATA[
-Given l'utilisateur visite le site de "https://www.fdj.fr/".................passed
-When l'utilisateur ferme Popup..............................................passed
-And l'utilisateur clique sur le link de Créer un compte.....................passed
-And l'utilisateur remplit le formulaire avec des valeurs valides "gulyalcin2022@gmail.com", "0658194363".passed
-And l'utilisateur remplit le champ de mot de passe avec de valeur valid "Francais3*".passed
-Then l'utilisateur verifie quil passe à la deuxième étape de création de compte.passed
+Given l'utilisateur visite le site de "http://diagdev.com"..................passed
+When l'utilisateur clique sur le lien de Contact............................passed
+And l'utilisateur remplit le formulaire "Gul","YALCIN","TESTER","START","Excepteur sint occaecat","Montpellier","".passed
+And l'utilisateur  clique sur le Send button................................passed
+Then utilisateur vérifie que le message d'avertissement "Forms contains errors. Please check your informations." apparaît sur la surface rouge.passed
 ]]></system-out>
 </testcase>
 </testsuite>

@@ -3,9 +3,12 @@ package utilities;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
@@ -15,6 +18,7 @@ import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 public class ReusableMethods {
@@ -104,6 +108,7 @@ public class ReusableMethods {
         wait.until(ExpectedConditions.alertIsPresent());
 
     }
+
     //Tüm Sayfa ScreenShot
     public static String tumSayfaResmi(String name) {
         String tarih = new SimpleDateFormat("_hh_mm_ss_ddMMyyyy").format(new Date());
@@ -182,11 +187,12 @@ public class ReusableMethods {
         String attribute_Value = (String) js.executeScript("return document.getElementById('" + id + "')." + attributeName);
         System.out.println("Attribute Value: = " + attribute_Value);
     }
+
     //File Upload Robot Class
-    public static void uploadFile(String dosyaYolu){
-        try{
+    public static void uploadFile(String dosyaYolu) {
+        try {
             StringSelection stringSelection = new StringSelection(dosyaYolu);
-            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection,null);
+            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
             Robot robot = new Robot();
             robot.keyPress(KeyEvent.VK_CONTROL);
             robot.keyPress(KeyEvent.VK_V);
@@ -196,12 +202,28 @@ public class ReusableMethods {
             robot.keyPress(KeyEvent.VK_ENTER);
             robot.keyRelease(KeyEvent.VK_ENTER);
             robot.delay(3000);
-        }catch (Exception ignored){
+        } catch (Exception ignored) {
 
         }
     }
-    public static void login( String password, String username){
+
+    public static void login(String password, String username) {
 
     }
 
+    public static ChromeDriver createChromeDriverWithoutSearchPrompt() {
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--no-first-run", "--no-default-browser-check");
+
+        HashMap<String, Object> prefs = new HashMap<>();
+        prefs.put("default_search_provider.enabled", true);
+        prefs.put("default_search_provider.search_url", "https://www.google.com/search?q={searchTerms}");
+        prefs.put("distribution.import_search_engine", false);
+        prefs.put("distribution.suppress_first_run_bubble", true);
+
+        options.setExperimentalOption("prefs", prefs);
+
+        return new ChromeDriver(options);
+
+    }
 }

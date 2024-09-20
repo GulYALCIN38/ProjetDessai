@@ -14,24 +14,20 @@ import static stepDefinition.Hooks.driver;
 public class FDJStepDefinition {
     List<WebElement> elements;
     HomePage homePage = new HomePage();
-
     @Given("l'utilisateur visite le site de {string}")
-    public void l_utilisateur_visite_le_site_de(String siteDeJDF) {
-        driver.get(siteDeJDF);
+    public void l_utilisateur_visite_le_site_de(String siteESII) {
+        driver.get(siteESII);
     }
-
-    @When("l'utilisateur ferme Popup")
-    public void lUtilisateurFermePopup() {
-
-        try {
-            ReusableMethods.visibleWait(homePage.popup, 30);
-            ReusableMethods.wait(1);
-            homePage.popup.click();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
-
+//    @When("l'utilisateur ferme Popup")
+//    public void lUtilisateurFermePopup() {
+//        try {
+//            ReusableMethods.visibleWait(homePage.popup, 30);
+//            ReusableMethods.wait(1);
+//            homePage.popup.click();
+//        } catch (Exception e) {
+//            throw new RuntimeException(e);
+//        }
+//    }
     @Then("L'utilisateur vérifie que les champs concernés sont visibles et fonctionnels")
     public void l_utilisateur_vérifie_que_les_champs_concernés_sont_visibles_et_fonctionnels() {
         elements = homePage.boutonNawbar;

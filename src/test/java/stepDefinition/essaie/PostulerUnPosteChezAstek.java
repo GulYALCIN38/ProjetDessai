@@ -108,4 +108,6 @@ public class PostulerUnPosteChezAstek {
 
     }
 
+    public static class ESIIStepDefs {
+    }
 }

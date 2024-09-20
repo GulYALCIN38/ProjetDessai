@@ -112,6 +112,34 @@ public class HomePage {
     public WebElement send;
     @FindBy(xpath = "//div[@class='errorMessage']")
     public WebElement message;
+
+   // ---------------------ESII----------------------------------------------------------------------
+   @FindBy(id = "axeptio_btn_dismiss")
+   public WebElement refuserCookies;
+
+    @FindBy(linkText = "Candidature spontanée")
+    public WebElement candidatureSpontanée;
+    @FindBy(xpath = "//a[@aria-label='À propos']")
+    public WebElement lienApropos;
+    @FindBy(id = "input_5_1")
+    public WebElement nomPrenom;
+    @FindBy(id = "input_5_3")
+    public WebElement e_mail;
+    @FindBy(id = "input_5_4")
+    public WebElement tel;
+    @FindBy(id = "input_5_5")
+    public WebElement choisirUnCV;
+    @FindBy(id = "input_5_5")
+    public WebElement choisirUneLetreMotivaton;
+    @FindBy(id = "input_5_7")
+    public WebElement inputMessage;
+    @FindBy(xpath = "//label[@class='gfield_consent_label']")
+    public WebElement RGPD;
+
+    @FindBy(xpath = "//button[@id='gform_submit_button_5']")
+    public WebElement buttonEnvoyer;
+
+
     /**
      * Cette méthode valide le title qui change lorsque vous cliquez sur un élément.
      * @param w webElement

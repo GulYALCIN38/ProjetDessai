@@ -49,6 +49,7 @@ public class Driver {
 
         //setting various capabilities for browsers
         ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--disable-search-engine-choice-screen");
         chromeOptions.setExperimentalOption("prefs", chromePrefs);
 
         if (isHeadless) {
