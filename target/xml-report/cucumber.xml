@@ -1,66 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="98.221" tests="7" skipped="0" failures="0" errors="0">
-<testcase classname="Check Titles et Créer un contact(test robustesse pour le lien de contact)" name="TC_001 TEST ROBUSTESSE(negatif) Un contact ne peut pas être créé en laissant les champs obligatoires vides. - Example #1.1" time="17.96">
+<testsuite name="Cucumber" time="74.78" tests="4" skipped="0" failures="0" errors="0">
+<testcase classname="Contrôles de title et Candidature spontanée" name="TC_01 Les elements de navbar(ACCUEIL, À PROPOS, EXPERTISES, REJOIGNE-NOUS, CONTACT) doivent être visibles et fonctionnels" time="14.926">
 <system-out><![CDATA[
-Given l'utilisateur visite le site de "http://diagdev.com"..................passed
-When l'utilisateur clique sur le lien de Contact............................passed
-And l'utilisateur remplit le formulaire "","YALCIN","Test qa","Talenttech","Lorem ipsum dolor sit amet","Montpellier","gulfen3@gmail.com".passed
-And l'utilisateur  clique sur le Send button................................passed
-Then utilisateur vérifie que le message d'avertissement "Forms contains errors. Please check your informations." apparaît sur la surface rouge.passed
+Given l'utilisateur visite le site de "https://synanto.fr/".................passed
+Then L'utilisateur vérifie que les champs concernés sont visibles fonctionnels.passed
 ]]></system-out>
 </testcase>
-<testcase classname="Check Titles et Créer un contact(test robustesse pour le lien de contact)" name="TC_001 TEST ROBUSTESSE(negatif) Un contact ne peut pas être créé en laissant les champs obligatoires vides. - Example #1.2" time="13.889">
+<testcase classname="Contrôles de title et Candidature spontanée" name="TC_02 TEST ROBUSTESSE(negatif) Une Candidature spontanée ne peut pas être envoyée en laissant les champs obligatoires vides. - Example #1.1" time="19.88">
 <system-out><![CDATA[
-Given l'utilisateur visite le site de "http://diagdev.com"..................passed
-When l'utilisateur clique sur le lien de Contact............................passed
-And l'utilisateur remplit le formulaire "Gul","","Dev Backend","Laboris","Consectetur adipisicing elit","Montpellier","gul@gmail.com".passed
-And l'utilisateur  clique sur le Send button................................passed
-Then utilisateur vérifie que le message d'avertissement "Forms contains errors. Please check your informations." apparaît sur la surface rouge.passed
+Given l'utilisateur visite le site de "https://synanto.fr/".................passed
+When l'utilisateur clique sur le lien de Candidature spontanée..............passed
+And L'utilisateur complète le formulaire "","gulfen3@yopmail.com","0658194363", "Ce serait formidable de travailler chez Synanto.".passed
+And l'utilisateur télécharge son CV.........................................passed
+And l'utilisateur  clique sur le checkbox...................................passed
+And l'utilisateur clique sur le bouton de envoyer...........................passed
+Then utilisateur vérifie que le message davertissement rouge "Ce champ est obligatoire." saffiche.passed
 ]]></system-out>
 </testcase>
-<testcase classname="Check Titles et Créer un contact(test robustesse pour le lien de contact)" name="TC_001 TEST ROBUSTESSE(negatif) Un contact ne peut pas être créé en laissant les champs obligatoires vides. - Example #1.3" time="13.758">
+<testcase classname="Contrôles de title et Candidature spontanée" name="TC_02 TEST ROBUSTESSE(negatif) Une Candidature spontanée ne peut pas être envoyée en laissant les champs obligatoires vides. - Example #1.2" time="19.216">
 <system-out><![CDATA[
-Given l'utilisateur visite le site de "http://diagdev.com"..................passed
-When l'utilisateur clique sur le lien de Contact............................passed
-And l'utilisateur remplit le formulaire "Gul","YALCIN","","Excepteur","Sed do eiusmod tempor","Montpellier","yalcin@gmail.com".passed
-And l'utilisateur  clique sur le Send button................................passed
-Then utilisateur vérifie que le message d'avertissement "Forms contains errors. Please check your informations." apparaît sur la surface rouge.passed
+Given l'utilisateur visite le site de "https://synanto.fr/".................passed
+When l'utilisateur clique sur le lien de Candidature spontanée..............passed
+And L'utilisateur complète le formulaire "Gul YALCIN","","0658194363", "Cette offre d'emploi me convient parfaitement.".passed
+And l'utilisateur télécharge son CV.........................................passed
+And l'utilisateur  clique sur le checkbox...................................passed
+And l'utilisateur clique sur le bouton de envoyer...........................passed
+Then utilisateur vérifie que le message davertissement rouge "Ce champ est obligatoire." saffiche.passed
 ]]></system-out>
 </testcase>
-<testcase classname="Check Titles et Créer un contact(test robustesse pour le lien de contact)" name="TC_001 TEST ROBUSTESSE(negatif) Un contact ne peut pas être créé en laissant les champs obligatoires vides. - Example #1.4" time="13.039">
+<testcase classname="Contrôles de title et Candidature spontanée" name="TC_02 TEST ROBUSTESSE(negatif) Une Candidature spontanée ne peut pas être envoyée en laissant les champs obligatoires vides. - Example #1.3" time="20.395">
 <system-out><![CDATA[
-Given l'utilisateur visite le site de "http://diagdev.com"..................passed
-When l'utilisateur clique sur le lien de Contact............................passed
-And l'utilisateur remplit le formulaire "Gul","YALCIN","SCRUM MASTER","","Quis nostrud exercitation ul","Montpellier","kaya@gmail.com".passed
-And l'utilisateur  clique sur le Send button................................passed
-Then utilisateur vérifie que le message d'avertissement "Forms contains errors. Please check your informations." apparaît sur la surface rouge.passed
-]]></system-out>
-</testcase>
-<testcase classname="Check Titles et Créer un contact(test robustesse pour le lien de contact)" name="TC_001 TEST ROBUSTESSE(negatif) Un contact ne peut pas être créé en laissant les champs obligatoires vides. - Example #1.5" time="14.014">
-<system-out><![CDATA[
-Given l'utilisateur visite le site de "http://diagdev.com"..................passed
-When l'utilisateur clique sur le lien de Contact............................passed
-And l'utilisateur remplit le formulaire "Gul","YALCIN","PO","Officia","","Montpellier","zelu@gmail.com".passed
-And l'utilisateur  clique sur le Send button................................passed
-Then utilisateur vérifie que le message d'avertissement "Forms contains errors. Please check your informations." apparaît sur la surface rouge.passed
-]]></system-out>
-</testcase>
-<testcase classname="Check Titles et Créer un contact(test robustesse pour le lien de contact)" name="TC_001 TEST ROBUSTESSE(negatif) Un contact ne peut pas être créé en laissant les champs obligatoires vides. - Example #1.6" time="12.749">
-<system-out><![CDATA[
-Given l'utilisateur visite le site de "http://diagdev.com"..................passed
-When l'utilisateur clique sur le lien de Contact............................passed
-And l'utilisateur remplit le formulaire "Gul","YALCIN","Architect","Voluptate","Duis aute irure dolor in","","umut@gmail.com".passed
-And l'utilisateur  clique sur le Send button................................passed
-Then utilisateur vérifie que le message d'avertissement "Forms contains errors. Please check your informations." apparaît sur la surface rouge.passed
-]]></system-out>
-</testcase>
-<testcase classname="Check Titles et Créer un contact(test robustesse pour le lien de contact)" name="TC_001 TEST ROBUSTESSE(negatif) Un contact ne peut pas être créé en laissant les champs obligatoires vides. - Example #1.7" time="12.525">
-<system-out><![CDATA[
-Given l'utilisateur visite le site de "http://diagdev.com"..................passed
-When l'utilisateur clique sur le lien de Contact............................passed
-And l'utilisateur remplit le formulaire "Gul","YALCIN","TESTER","START","Excepteur sint occaecat","Montpellier","".passed
-And l'utilisateur  clique sur le Send button................................passed
-Then utilisateur vérifie que le message d'avertissement "Forms contains errors. Please check your informations." apparaît sur la surface rouge.passed
+Given l'utilisateur visite le site de "https://synanto.fr/".................passed
+When l'utilisateur clique sur le lien de Candidature spontanée..............passed
+And L'utilisateur complète le formulaire "Gul YALCIN","gulyalcin2022@yopmail.com","0658194363", "".passed
+And l'utilisateur télécharge son CV.........................................passed
+And l'utilisateur  clique sur le checkbox...................................passed
+And l'utilisateur clique sur le bouton de envoyer...........................passed
+Then utilisateur vérifie que le message davertissement rouge "Ce champ est obligatoire." saffiche.passed
 ]]></system-out>
 </testcase>
 </testsuite>

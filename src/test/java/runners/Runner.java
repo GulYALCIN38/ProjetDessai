@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
 },
         features = "src/test/resources/features",
         glue = {"stepDefinition"},
-        tags ="@diagdev",
+        tags ="@Synanto",
         dryRun = false,
         monochrome = true
 

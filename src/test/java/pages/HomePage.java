@@ -117,7 +117,7 @@ public class HomePage {
    @FindBy(id = "axeptio_btn_dismiss")
    public WebElement refuserCookies;
 
-    @FindBy(linkText = "Candidature spontanée")
+    @FindBy(xpath = "//*[text()='Candidature spontanée']")
     public WebElement candidatureSpontanée;
     @FindBy(xpath = "//a[@aria-label='À propos']")
     public WebElement lienApropos;
@@ -129,21 +129,39 @@ public class HomePage {
     public WebElement tel;
     @FindBy(id = "input_5_5")
     public WebElement choisirUnCV;
-    @FindBy(id = "input_5_5")
+    @FindBy(id = "input_5_6")
     public WebElement choisirUneLetreMotivaton;
     @FindBy(id = "input_5_7")
     public WebElement inputMessage;
     @FindBy(xpath = "//label[@class='gfield_consent_label']")
     public WebElement RGPD;
-
     @FindBy(xpath = "//button[@id='gform_submit_button_5']")
     public WebElement buttonEnvoyer;
+    @FindBy(xpath = "//div[text()='Ce champ est nécessaire']")
+    public WebElement messageError;
 
+    // ---------------------SYNTANO----------------------------------------------------------------------
+    @FindBy(xpath = "//*[@placeholder='Vos nom et prénom*']")
+    public WebElement nomEtPrenom;
+    @FindBy(xpath = "//*[@placeholder='Votre email*']")
+    public WebElement votreEmail;
+    @FindBy(xpath = "//*[@placeholder='Téléphone']")
+    public WebElement telephon;
+    @FindBy(xpath = "//*[@placeholder='Votre message*']")
+    public WebElement votreMessage;
+    @FindBy(name = "file-175")
+    public WebElement choisirUnFichier;
+    @FindBy(name = "acceptance-663")
+    public WebElement checkbox;
+    @FindBy(xpath = "//*[@class='wpcf7-form-control wpcf7-submit has-spinner']")
+    public WebElement envoyer;
+    @FindBy(xpath = "//span[text()='Ce champ est obligatoire.']")
+    public WebElement messageDerror;
 
     /**
      * Cette méthode valide le title qui change lorsque vous cliquez sur un élément.
      * @param w webElement
-     * @param expectedTitle
+     * @param expectedTitle String
      * @author gulyalcin
      * @date 08.06.2024
      */
@@ -156,7 +174,7 @@ public class HomePage {
     /**
      * Cette méthode valide l'url qui change lorsque vous cliquez sur un élément.
      * @param w webElement
-     * @param expectedUrl
+     * @param expectedUrl String
      * @author gulyalcin
      * @date 07.06.2024
      */
