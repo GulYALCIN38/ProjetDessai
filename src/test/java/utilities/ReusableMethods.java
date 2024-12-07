@@ -142,7 +142,7 @@ public class ReusableMethods {
     }
 
     //Click Method
-    public static void click(WebElement element) {
+    public static void clickJS(WebElement element) {
         try {
             element.click();
         } catch (Exception e) {

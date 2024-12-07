@@ -1,4 +1,4 @@
-package stepDefinition;
+package stepDefinition.essaie;
 
 import enums.COLOR;
 import io.cucumber.datatable.DataTable;
@@ -79,4 +79,6 @@ public class SynantoStepDef {
         //On vérifie si le message est rouge
         COLOR.ROUGE_MESSAGE.assertTextColor(homePage.messageDerror);
     }
+
+
 }

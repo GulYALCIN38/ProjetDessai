@@ -40,7 +40,7 @@ public class PostulerUnPosteChezAstek {
         List<String> windowslist = new ArrayList<>(Windows);
         Driver.getDriver().switchTo().window(windowslist.get(1));
         ReusableMethods.wait(1);
-        ReusableMethods.click(pageAstek.cdi);
+        ReusableMethods.clickJS(pageAstek.cdi);
     }
 
     @When("utilisateur clicque sur le bouton de Ingenierie")

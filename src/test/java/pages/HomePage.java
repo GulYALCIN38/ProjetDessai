@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.Select;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+import javax.xml.xpath.XPath;
 import java.util.List;
 
 import static java.lang.String.format;
@@ -157,6 +158,36 @@ public class HomePage {
     public WebElement envoyer;
     @FindBy(xpath = "//span[text()='Ce champ est obligatoire.']")
     public WebElement messageDerror;
+
+
+
+    //--------------------------Credit Agricole--------------------------------------------------
+
+    @FindBy(xpath="//button[@data-trackingclass-npc='MMenu-niveau1-button']")
+    public List<WebElement> buttonsNavbarHomePage;
+    @FindBy(xpath="//div[@class='bouton-vert parbase']//button")
+    public WebElement buttonContact;
+    @FindBy(id="popin_tc_privacy_button_2")
+    public WebElement popUp;
+    @FindBy(xpath="//iframe[@src='https://www.googletagmanager.com/static/service_worker/4c30/sw_iframe.html?origin=https%3A%2F%2Fwww.credit-agricole.fr']")
+    public WebElement iframe;
+    @FindBy(xpath="//a[@aria-label='Être rappelé']")
+    public WebElement lienÊtreRappelé;
+    @FindBy(xpath="(//*[@id='WcbWidget-ContentHome-CallbackForm-LastName'])[2]")
+    public WebElement inputNom;
+    @FindBy(xpath="(//*[@id='WcbWidget-ContentHome-CallbackForm-FirstName'])[2]")
+    public WebElement inputPrenom;
+    @FindBy(xpath="(//*[@id='WcbWidget-ContentHome-CallbackForm-PhoneNumber'])[2]")
+    public WebElement inputTel;
+    @FindBy(xpath="(//div[@class='GreenBtn-callbackNeedCallbackFormContentWrapper radio-label js-radio-label'])[2]")
+    public WebElement radioButton;
+    @FindBy(xpath="(//*[@id='WcbWidget-ContentHome-CallbackForm-Date-Date'])[2]")
+    public WebElement inputDate;
+    @FindBy(xpath="(//button[@data-id='WcbWidget-ContentHome-CallbackForm-Date-Time'])[2]")
+    public WebElement inputTime;
+    @FindBy(id="(//*[@id='WcbWidget-ContentHome-CallbackFooter-NoticeDiv'])[2]")
+    public WebElement checkboxAccept;
+
 
     /**
      * Cette méthode valide le title qui change lorsque vous cliquez sur un élément.

@@ -83,7 +83,7 @@ public class OleaHomepageCheckTitles extends CommonPage {
     @And("l'utilisateur remplit le formulaire avec des valeurs valides {string}, {string}, {string}")
     public void lUtilisateurRemplitLeFormulaireAvecDesValeursValides(String prénom, String nom, String institution) {
         driver.switchTo().frame(getOleaHomePage().iframe);
-        ReusableMethods.click(getOleaHomePage().civilite);
+        ReusableMethods.clickJS(getOleaHomePage().civilite);
         getOleaHomePage().prenom.sendKeys(prénom);
         ReusableMethods.wait(1);
         getOleaHomePage().nom.sendKeys(nom, Keys.TAB, institution);
