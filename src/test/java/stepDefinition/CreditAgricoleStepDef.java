@@ -6,8 +6,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -27,9 +25,13 @@ public class CreditAgricoleStepDef {
     @When("l'utilisateur ferme popup")
     public void lUtilisateurFermePopup() {
 
-        ReusableMethods.visibleWait(homePage.popUp, 10);
-        ReusableMethods.wait(1);
-        homePage.popUp.click();
+        try {
+            ReusableMethods.visibleWait(homePage.popUp, 10);
+            ReusableMethods.wait(1);
+            homePage.popUp.click();
+        } catch (Exception ignored) {
+
+        }
     }
 
 
@@ -68,9 +70,7 @@ public class CreditAgricoleStepDef {
 
     @And("l'utilisateur clique sur Être rappelé")
     public void lUtilisateurCliqueSurÊtreRappelé() {
-        ReusableMethods.clickJS(homePage.lienÊtreRappelé);
         homePage.lienÊtreRappelé.click();
-
     }
 
     @And("l'utilisateur complète le formulaire {string},{string},{string}, {string},{string}")
@@ -84,32 +84,57 @@ public class CreditAgricoleStepDef {
         ReusableMethods.wait(1);
         homePage.inputTel.sendKeys(Tel);
         ReusableMethods.wait(1);
-        JavascriptExecutor js=(JavascriptExecutor) Driver.getDriver();
-        js.executeScript("arguments[0].removeAttribute('readonly')", homePage.inputDate);
-        ReusableMethods.clickJS(homePage.inputDate);
-        ReusableMethods.wait(3);
-        System.out.println("date = " + date);
-        homePage.inputDate.sendKeys(Keys.COMMAND,date);
-//        homePage.inputDate.sendKeys(date);
-//        actions.sendKeys(homePage.inputDate, date, Keys.BACK_SPACE).perform();
+        // Click and open date picker
+        homePage.inputDate.sendKeys(date);
+        ReusableMethods.wait(1);
+        // Select date
+        homePage.inputDate.click();
+        try {
+            Driver.getDriver().findElement(By.xpath("//tbody/tr/td[text()=" + date + "]")).click();
+            ReusableMethods.wait(1);
+        } catch (Exception ignored) {}
 
-//        ReusableMethods.wait(1);
-//        homePage.inputTime.sendKeys(horaire);
-
+        // Click time dropdown
+        homePage.inputTime.click();
+        // Select time
+        try {
+            Driver.getDriver().findElement(By.xpath("//span[text()=\"" + horaire + "\"]")).click();
+        } catch (Exception ignored) {}
 
     }
 
     @And("l'utilisateur  clique sur le  checkbox")
     public void lUtilisateurCliqueSurLeCheckbox() {
         ReusableMethods.wait(1);
+        actions.moveToElement(homePage.checkboxAccept);
         homePage.checkboxAccept.click();
     }
 
     @And("l'utilisateur clique sur le bouton de valider")
     public void lUtilisateurCliqueSurLeBoutonDeValider() {
+        ReusableMethods.wait(1);
+        homePage.submitButton.click();
     }
 
     @Then("utilisateur vérifie que le message davertissement  rouge {string} saffiche")
-    public void utilisateurVérifieQueLeMessageDavertissementRougeSaffiche(String arg0) {
+    public void utilisateurVérifieQueLeMessageDavertissementRougeSaffiche(String expectedMessage) {
+        switch (expectedMessage) {
+            case "Donnée obligatoire - Veuillez saisir votre numéro de téléphone": {
+                String actuelMessage = homePage.missingErrorPhoneNumber.getText();
+                Assert.assertEquals(expectedMessage, actuelMessage);
+
+                break;
+            }
+            case "Veuillez sélectionner une date dans le calendrier": {
+                String actuelMessage = homePage.missingErrorDate.getText();
+                Assert.assertEquals(expectedMessage, actuelMessage);
+                break;
+            }
+            case "Veuillez sélectionner un horaire": {
+                String actuelMessage = homePage.missingErrorTime.getText();
+                Assert.assertEquals(expectedMessage, actuelMessage);
+                break;
+            }
+        }
     }
 }

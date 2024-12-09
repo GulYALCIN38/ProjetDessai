@@ -169,26 +169,32 @@ public class HomePage {
     public WebElement buttonContact;
     @FindBy(id="popin_tc_privacy_button_2")
     public WebElement popUp;
-    @FindBy(xpath="//iframe[@src='https://www.googletagmanager.com/static/service_worker/4c30/sw_iframe.html?origin=https%3A%2F%2Fwww.credit-agricole.fr']")
-    public WebElement iframe;
     @FindBy(xpath="//a[@aria-label='Être rappelé']")
     public WebElement lienÊtreRappelé;
-    @FindBy(xpath="(//*[@id='WcbWidget-ContentHome-CallbackForm-LastName'])[2]")
+    @FindBy(id="WcbWidget-ContentHome-CallbackForm-LastName")
     public WebElement inputNom;
-    @FindBy(xpath="(//*[@id='WcbWidget-ContentHome-CallbackForm-FirstName'])[2]")
+    @FindBy(id="WcbWidget-ContentHome-CallbackForm-FirstName")
     public WebElement inputPrenom;
-    @FindBy(xpath="(//*[@id='WcbWidget-ContentHome-CallbackForm-PhoneNumber'])[2]")
+    @FindBy(id="WcbWidget-ContentHome-CallbackForm-PhoneNumber")
     public WebElement inputTel;
     @FindBy(xpath="(//div[@class='GreenBtn-callbackNeedCallbackFormContentWrapper radio-label js-radio-label'])[2]")
     public WebElement radioButton;
-    @FindBy(xpath="(//*[@id='WcbWidget-ContentHome-CallbackForm-Date-Date'])[2]")
+    @FindBy(id="WcbWidget-ContentHome-CallbackForm-Date-Date")
     public WebElement inputDate;
-    @FindBy(xpath="(//button[@data-id='WcbWidget-ContentHome-CallbackForm-Date-Time'])[2]")
+    @FindBy(xpath = "//button[@data-id='WcbWidget-ContentHome-CallbackForm-Date-Time']")
     public WebElement inputTime;
-    @FindBy(id="(//*[@id='WcbWidget-ContentHome-CallbackFooter-NoticeDiv'])[2]")
+    @FindBy(xpath = "//label[@class='checkbox-label GreenBtn-callbackLaterFooterFormLabel GreenBtn-callbackFormLabel--lowerCase']")
     public WebElement checkboxAccept;
-
-
+    @FindBy(id = "WcbWidget-ContentHome-CallbackLater-SubmitButton")
+    public WebElement submitButton;
+    @FindBy(id = "WcbWidget-ContentHome-CallbackForm-PhoneNumber-MissingError")
+    public WebElement missingErrorPhoneNumber;
+    @FindBy(id = "WcbWidget-ContentHome-CallbackForm-Date-IncompleteError")
+    public WebElement missingErrorTime;
+    @FindBy(id = "WcbWidget-ContentHome-CallbackForm-Date-MissingError")
+    public WebElement missingErrorDate;
+    @FindBy(id = "WcbWidget-ContentHome-CallbackForm-Date-LaterRadio")
+    public WebElement radio;
     /**
      * Cette méthode valide le title qui change lorsque vous cliquez sur un élément.
      * @param w webElement

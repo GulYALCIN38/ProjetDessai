@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
 },
         features = "src/test/resources/features",
         glue = {"stepDefinition"},
-        tags ="@Synanto",
+        tags ="@CreditAgricole",
         dryRun = false,
         monochrome = true
 

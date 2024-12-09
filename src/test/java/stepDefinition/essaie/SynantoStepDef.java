@@ -7,8 +7,11 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import pages.HomePage;
+import utilities.Driver;
 import utilities.ReusableMethods;
 
 import java.util.List;
@@ -79,6 +82,18 @@ public class SynantoStepDef {
         //On vérifie si le message est rouge
         COLOR.ROUGE_MESSAGE.assertTextColor(homePage.messageDerror);
     }
+
+//    JavascriptExecutor js=(JavascriptExecutor) Driver.getDriver();
+//        js.executeScript("arguments[0].removeAttribute('readonly')", homePage.inputDate);
+//        ReusableMethods.clickJS(homePage.inputDate);
+//        ReusableMethods.wait(3);
+//        System.out.println("date = " + date);
+//        homePage.inputDate.sendKeys(Keys.COMMAND,date);
+//        homePage.inputDate.sendKeys(date);
+//        actions.sendKeys(homePage.inputDate, date, Keys.BACK_SPACE).perform();
+//
+//        ReusableMethods.wait(1);
+//        homePage.inputTime.sendKeys(horaire);
 
 
 }
